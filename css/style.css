@@ -56,8 +56,8 @@ body {
     padding: auto;
     background-color: rgb(155, 218, 143);
     color: aliceblue;
-    margin-right: 20px;
-    margin-left: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
     width: 30px;
     height: 30px;
     text-decoration: none; /* Usuń poziomą linię */
@@ -81,10 +81,12 @@ body {
 }
 
 .tasks__item--remove {
+position:relative;
   background-color: crimson;
   width: 30px;
   height: 30px;
-  margin-left: 50px;
+  margin-right: 120px;
+  margin-left: 130px;;
   float: centre;
   content: 1F5D1 (*);
   margin-right: 5px;
