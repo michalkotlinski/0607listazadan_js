@@ -86,11 +86,12 @@ body {
   height: 30px;
   margin-left: 50px;
   float: centre;
+  content: 1F5D1 (*);
+  margin-right: 5px;
   text-decoration: none; /* Usuń poziomą linię */
-    cursor: pointer; /* Dodaj efekt wskaźnika podczas najechania */
-    
-    align-items: center; /* Wyśrodkuj zawartość w pionie */
-    justify-content: center; /* Wyśrodkuj zawartość w poziomie */
+  cursor: pointer; /* Dodaj efekt wskaźnika podczas najechania */
+  align-items: center; /* Wyśrodkuj zawartość w pionie */
+  justify-content: center; /* Wyśrodkuj zawartość w poziomie */
 }
 }
 .text {
