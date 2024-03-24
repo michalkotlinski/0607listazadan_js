@@ -6,7 +6,7 @@ body {
 .container__box {
   max-width: 900px;
   padding: 20px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .section {
@@ -60,6 +60,7 @@ body {
     margin-left: 100px;
     width: 30px;
     height: 30px;
+    content: dds__icon--checkmark
     text-decoration: none; /* Usuń poziomą linię */
     cursor: pointer; /* Dodaj efekt wskaźnika podczas najechania */
     display: flex; /* Dodaj flex display */
@@ -75,27 +76,25 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background-color: black; /* Kolor przekreślenia */
   transform: translateY(-50%);
 
 }
 
 .tasks__item--remove {
-position:relative;
+  position: relative;
   background-color: crimson;
   width: 30px;
   height: 30px;
   margin-right: 120px;
-  margin-left: 130px;;
+  margin-left: 100px;;
   float: centre;
   content: 1F5D1 (*);
-  margin-right: 5px;
   text-decoration: none; /* Usuń poziomą linię */
   cursor: pointer; /* Dodaj efekt wskaźnika podczas najechania */
   align-items: center; /* Wyśrodkuj zawartość w pionie */
   justify-content: center; /* Wyśrodkuj zawartość w poziomie */
 }
-}
+
 .text {
   list-style: none;
 }
