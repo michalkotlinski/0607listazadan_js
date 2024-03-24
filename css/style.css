@@ -88,7 +88,7 @@ body {
   margin-right: 120px;
   margin-left: 100px;;
   float: centre;
-  content: 1F5D1 (*);
+  content: 1F5D1;
   text-decoration: none; /* Usuń poziomą linię */
   cursor: pointer; /* Dodaj efekt wskaźnika podczas najechania */
   align-items: center; /* Wyśrodkuj zawartość w pionie */
