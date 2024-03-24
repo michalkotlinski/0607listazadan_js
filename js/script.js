@@ -4,7 +4,7 @@
         done: true,
     },
     {
-        content: "Przykładowe nie zrobione zadanie",
+        content: "Przykładowe niezrobione zadanie",
         done: false,
     },
     ];
