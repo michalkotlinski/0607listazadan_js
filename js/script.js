@@ -66,10 +66,11 @@
         tasksElement.innerHTML = addTextToHtml;
 
         document.querySelector(".js-stats__item2").innerHTML = `
-        liczba wszystkich zadań: ${tasks.length}
+        Wszystkie zadania: ${tasks.length}
         `;
         document.querySelector(".js-stats__item").innerHTML = `
-        liczba ukończonych zadań: ${tasks.filter(task => task.done).length}`;
+        Ukończone zadania: ${tasks.filter(task => task.done).length}`;
+
         bindButtonTasks()
     };
 
