@@ -52,15 +52,13 @@ body {
 }
 
 .tasks__item {
-    position: absolute;
-    padding: auto;
+    position: relative;
     background-color: rgb(155, 218, 143);
     color: aliceblue;
-    margin-right: 100px;
-    margin-left: 100px;
     width: 30px;
     height: 30px;
-    content: dds__icon--checkmark;
+    margin-right: 100px;
+    margin-left: 80px;
     text-decoration: none; /* Usuń poziomą linię */
     cursor: pointer; /* Dodaj efekt wskaźnika podczas najechania */
     display: flex; /* Dodaj flex display */
@@ -81,12 +79,12 @@ body {
 }
 
 .tasks__item--remove {
-  position: relative;
+  position: fixed;
   background-color: crimson;
   width: 30px;
   height: 30px;
-  margin-right: 120px;
-  margin-left: 100px;;
+  margin-right: 100px;
+  margin-left: 80px;
   float: centre;
   content: 1F5D1;
   text-decoration: none; /* Usuń poziomą linię */
