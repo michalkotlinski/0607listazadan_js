@@ -1,0 +1,33 @@
+.tasksList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tasksList__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 5px;
+}
+
+.taskDone {
+    text-decoration: line-through;
+}
+
+.stats {
+    background-color: rgb(152, 192, 207);
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 100px 100px;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    color:#fff;
+    margin:20px;
+}
+
+.stats__item {
+    text-align: end;
+}
