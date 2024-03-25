@@ -33,14 +33,14 @@
     background-color: rgba(0, 128, 128, 0.393);
 }
 
-.tasksListButton--reomve {
+.tasksListButton--remove {
     background-color: crimson;
 }
 
-.tasksListButton--reomve:hover {
+.tasksListButton--remove:hover {
     background-color: rgba(220, 20, 60, 0.719);
 }
 
-.tasksListButton--reomve:active {
+.tasksListButton--remove:active {
     background-color: rgba(220, 20, 60, 0.504);
 }

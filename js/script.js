@@ -1,10 +1,14 @@
 {
     const tasks = [{
-        content: "Przykładowe zrobione zadanie",
-        done: true,
+        content: "Zadanie 1",
+        done: false,
     },
     {
-        content: "Przykładowe niezrobione zadanie",
+        content: "Zadanie 2",
+        done: false,
+    },
+    {
+        content: "Zadanie 3",
         done: false,
     },
     ];
@@ -54,7 +58,7 @@
                 <span class="${task.done ? "taskDone" : ""}">  
                 ${task.content}
                 </span>
-                <button class="tasksListButton tasksListButton--reomve js-removeButton">
+            <button class="tasksListButton tasksListButton--remove js-removeButton">
                     🗑
                  </button>
             
@@ -64,6 +68,12 @@
         };
 
         tasksElement.innerHTML = addTextToHtml;
+
+        // Dodanie wyświetlania ilości zadań do wykonania
+        const remainingTasks = tasks.length - tasks.filter(task => task.done).length;
+        document.querySelector(".js-stats__item3").innerHTML = `
+        Pozostałe zadania: ${remainingTasks}`;
+
 
         document.querySelector(".js-stats__item2").innerHTML = `
         Wszystkie zadania: ${tasks.length}`;
