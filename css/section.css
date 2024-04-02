@@ -1,14 +1,56 @@
 .section {
-    background-color: white;
-    margin: 10px 0;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
 }
 
 .section__header {
-    margin: 0px;
+    font-weight: 700;
+    padding: 10px;
+    border-bottom: 2px solid #cccccc;
+}
+
+.section__list {
+    list-style: none;
+    margin: 0;
     padding: 20px;
+}
+
+.section__listItem {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
 
-.section__body {
-    padding: 20px;
+.section__listItemText {
+    word-break: break-word;
+}
+
+.section__listItemText--done {
+    text-decoration: line-through;
+}
+
+.section__button {
+    border: none;
+    background-color: #ffffff;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+}
+
+.section__button--done {
+    color: #ffffff;
+    background-color: forestgreen;
+}
+
+.done {
+    background-color: yellow;
+}
+
+.section__button--remove {
+    color: #ffffff;
+    background-color: red;
 }

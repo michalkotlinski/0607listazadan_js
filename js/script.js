@@ -1,106 +1,90 @@
 {
-    const tasks = [{
-        content: "Zadanie 1",
-        done: false,
-    },
-    {
-        content: "Zadanie 2",
-        done: false,
-    },
-    {
-        content: "Zadanie 3",
-        done: false,
-    },
+    const tasks = [
+        {
+            content: "sformatować odpowiednio",
+            done: true,
+        },
+        {
+            content: "cieszyć się",
+            done: false,
+        },
     ];
 
-    const addNewTask = (newTask) => {
+    const addNewTask = (newTaskContent) => {
         tasks.push({
-            content: newTask,
+            content: newTaskContent,
+            done: false,
         });
         render();
     };
 
-    const toogleButtonTasks = (index) => {
-        tasks[index].done = !tasks[index].done
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
         render();
     };
 
-    const removeButtonTasks = (index) => {
-        tasks.splice(index, 1);
+    const toogleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
     };
 
-    const bindButtonTasks = () => {
-        const toogleButton = document.querySelectorAll(".js-toogleButton");
-        toogleButton.forEach((toogleButton, index) => {
-            toogleButton.addEventListener("click", () => {
-                toogleButtonTasks(index);
+    const bindEvents = () => {
+        const removeButtonsElements = document.querySelectorAll(".js-section_button--remove");
+
+        removeButtonsElements.forEach((removeButton, index) =>{
+            removeButton.addEventListener("click", () => {
+                removeTask(index);
             });
         });
 
-        const removeButton = document.querySelectorAll(".js-removeButton");
-        removeButton.forEach((removeButton, index) => {
-            removeButton.addEventListener("click", () => {
-                removeButtonTasks(index);
+        const toggleButtonsDone = document.querySelectorAll(".js-done");
+
+        toggleButtonsDone.forEach((toggleButtonDone, index) => {
+            toggleButtonDone.addEventListener("click", () => {
+                toogleTaskDone(index);
             });
         });
     };
 
     const render = () => {
-        let addTextToHtml = "";
-        const tasksElement = document.querySelector(".js-tasksList");
+        let htmlString = "";
+
         for (const task of tasks) {
-            addTextToHtml += `
-                <li class="tasksList__item">
-                 <button class="tasksListButton tasksListButton--toogle js-toogleButton">
-                     ${task.done ? "✔" : ""}
-                 </button>
-                <span class="${task.done ? "taskDone" : ""}">  
-                ${task.content}
-                </span>
-            <button class="tasksListButton tasksListButton--remove js-removeButton">
-                    🗑
-                 </button>
-            
+            htmlString += `
+                <li class="section__listItem ${task.done ? "section__listItem--done\"" : "\""}>
+                    <button class="section__button section__button--done js-done">${task.done ? "&#10004;" : ""}</button> 
+                    <span class="section__listItemText ${task.done ? "section__listItemText--done\"" : "\""}">${task.content}</span>
+                    <button class="section__button section__button--remove js-section_button--remove">&#10006;</button>
                 </li>
-                <hr>
-                `
-        };
+            `;
+        }
 
-        tasksElement.innerHTML = addTextToHtml;
+        document.querySelector(".js-section__list").innerHTML = htmlString;
 
-        // Dodanie wyświetlania ilości zadań do wykonania
-        const remainingTasks = tasks.length - tasks.filter(task => task.done).length;
-        document.querySelector(".js-stats__item3").innerHTML = `
-        Pozostałe zadania: ${remainingTasks}`;
-
-
-        document.querySelector(".js-stats__item2").innerHTML = `
-        Wszystkie zadania: ${tasks.length}`;
-
-        document.querySelector(".js-stats__item").innerHTML = `
-        Ukończone zadania: ${tasks.filter(task => task.done).length}`;
-        
-        bindButtonTasks()
-    };
+        bindEvents();
+    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        const newTaskElemnt = document.querySelector(".js-newTask");
-        const newTask = newTaskElemnt.value.trim();
-        if (newTask !== "") {
-            addNewTask(newTask);
-            newTaskElemnt.value = "";
+
+        const newTaskElement = document.querySelector(".js-form__input");
+        const newTaskContent = newTaskElement.value.trim();
+
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value= "";
         }
-        newTaskElemnt.focus();
+        
+        newTaskElement.focus();
     };
 
     const init = () => {
         render();
-        const form = document.querySelector(".js-form");
-        form.addEventListener("submit", onFormSubmit);
+
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", onFormSubmit);
     };
 
     init();
-
-}
+};
