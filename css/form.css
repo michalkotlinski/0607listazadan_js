@@ -25,6 +25,12 @@
     background-color: #008080;
     border: none;
     height: 35px;
+    transition:0.5s;
+}
+
+.form__button:hover {
+    cursor: pointer;
+    background-color: aquamarine;
 }
 
 @media (max-width: 767px){

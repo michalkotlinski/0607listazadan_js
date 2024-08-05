@@ -35,10 +35,16 @@
 
 .section__button {
     border: none;
-    background-color: #ffffff;
+    background-color: hsl(0, 0%, 100%);
     font-size: 22px;
     width: 30px;
     height: 30px;
+    transition: 0.5s;
+}
+
+.section__button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 100%);
 }
 
 .section__button--done {
@@ -46,11 +52,15 @@
     background-color: forestgreen;
 }
 
-.done {
-    background-color: yellow;
+.section__button--done:hover {
+    transform: scale(1.25);
+    background-color: hsl(140, 72%, 55%);
 }
-
 .section__button--remove {
     color: #ffffff;
-    background-color: red;
+    background-color: hsl(0, 100%, 50%);
+}
+
+.section__button--remove:hover {
+    background-color: hsl(9, 49%, 55%);
 }
